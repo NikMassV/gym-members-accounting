@@ -12,14 +12,13 @@
 
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <hibernate.version>5.4.30.Final</hibernate.version>
         <postgresql.version>42.2.20</postgresql.version>
 
         <spring.version>5.2.14.RELEASE</spring.version>
         <spring-data.version>2.3.9.RELEASE</spring-data.version>
+
+        <jackson.version>2.11.0</jackson.version>
 
         <slf4j.version>1.7.30</slf4j.version>
         <log4j.version>2.14.1</log4j.version>
@@ -94,6 +93,11 @@
             <version>${spring-data.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -106,17 +110,6 @@
             <version>${slf4j.version}</version>
         </dependency>
 
-        <!--
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>-->
 
         <dependency>
             <groupId>junit</groupId>

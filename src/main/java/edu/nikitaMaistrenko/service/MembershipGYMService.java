@@ -2,7 +2,6 @@ package edu.nikitaMaistrenko.service;
 
 import edu.nikitaMaistrenko.dao.MembershipGYMRepository;
 import edu.nikitaMaistrenko.domain.MembershipGYM;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +12,7 @@ public class MembershipGYMService {
 
     private final MembershipGYMRepository membershipGYMRepository;
 
-    @Autowired
+
     public MembershipGYMService(MembershipGYMRepository membershipGYMRepository) {
         this.membershipGYMRepository = membershipGYMRepository;
     }

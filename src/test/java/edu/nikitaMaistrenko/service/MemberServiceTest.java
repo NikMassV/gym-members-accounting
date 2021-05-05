@@ -3,6 +3,7 @@ package edu.nikitaMaistrenko.service;
 
 import edu.nikitaMaistrenko.domain.Member;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -46,6 +47,7 @@ public class MemberServiceTest {
         Assert.assertTrue(list.size() == 3);
     }
 
+
     @Test
     public void findByLastName() {
         Member member = memberService.findByLastName("Простанина");
@@ -59,6 +61,7 @@ public class MemberServiceTest {
         LOG.info("findAllMembers - OK");
         Assert.assertTrue(list.size() == 2);
     }
+
 
     @Test
     public void editMembershipGYM() {
