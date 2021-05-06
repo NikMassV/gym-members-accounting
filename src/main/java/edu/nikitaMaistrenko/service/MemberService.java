@@ -2,7 +2,6 @@ package edu.nikitaMaistrenko.service;
 
 import edu.nikitaMaistrenko.dao.MemberRepository;
 import edu.nikitaMaistrenko.domain.Member;
-import edu.nikitaMaistrenko.view.MemberRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
