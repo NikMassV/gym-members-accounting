@@ -38,6 +38,7 @@ CREATE TABLE membership_card (
 
 INSERT INTO member (first_name, last_name, date_of_birth, tel_number, sex, source_of_advertising)
 VALUES ('Василий', 'Васильев', '12.02.1992', '+375(29)298-42-12', 'мужской', 'instagram'),
+('Петр', 'Васильев', '12.02.1992', '+375(29)298-42-12', 'мужской', 'instagram'),
 ('Надежда', 'Простанина', '12.02.1992', '+375(33)272-28-12', 'женский', 'vk');
 
 INSERT INTO membership_gym (type_of_gym_membership, number_of_workouts, validity_months)

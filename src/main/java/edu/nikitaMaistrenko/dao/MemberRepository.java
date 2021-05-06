@@ -4,8 +4,10 @@ import edu.nikitaMaistrenko.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
     @Query(value = "select m from Member m where m.lastName = ?1")
-    Member findByLastName(String typeOfGymMembership);
+    List<Member> findByLastName(String typeOfGymMembership);
 }
