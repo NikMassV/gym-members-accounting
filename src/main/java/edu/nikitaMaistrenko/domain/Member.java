@@ -1,5 +1,11 @@
 package edu.nikitaMaistrenko.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import edu.nikitaMaistrenko.view.dateconverter.LocalDateStringConverter;
+import edu.nikitaMaistrenko.view.dateconverter.StringLocalDateConverter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -19,6 +25,8 @@ public class Member {
     @Column(name = "last_name")
     private String lastName;
 
+    @JsonSerialize(converter = LocalDateStringConverter.class)
+    @JsonDeserialize(converter = StringLocalDateConverter.class)
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
@@ -31,6 +39,7 @@ public class Member {
     @Column(name = "source_of_advertising")
     private String sourceOfAdvertising;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "member")
     @Column(name = "membership_cards")
     private List<MembershipCard> membershipCards;
