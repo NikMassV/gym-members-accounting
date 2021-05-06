@@ -3,12 +3,9 @@ package edu.nikitaMaistrenko.rest;
 
 import edu.nikitaMaistrenko.domain.Member;
 import edu.nikitaMaistrenko.service.MemberService;
-import edu.nikitaMaistrenko.view.MemberRequest;
-import edu.nikitaMaistrenko.view.MemberResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -21,13 +18,10 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping(path = "/{lastName}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/findByLastName", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Member> findByLastName(@PathVariable("lastName") String lastName) {
-
-        List<Member> findedMember = memberService.findByLastName(lastName);
-
-        return findedMember;
+    public List<Member> findByLastName(@RequestParam("lastName") String lastName) {
+        return memberService.findByLastName(lastName);
     }
 
     @GetMapping(path = "/findAll", produces = MediaType.APPLICATION_JSON_VALUE)
