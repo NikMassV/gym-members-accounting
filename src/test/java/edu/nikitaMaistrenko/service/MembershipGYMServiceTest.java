@@ -33,38 +33,38 @@ public class MembershipGYMServiceTest {
 
     @Test
     public void add() {
-        membershipGYM.setTypeOfGymMembership("ULT6");
+        membershipGYM.setTypeOfMembershipGYM("ULT6");
         membershipGYM.setNumber_of_workouts(76);
         membershipGYM.setValidityMonths(6);
         membershipGYMService.add(membershipGYM);
-        List<MembershipGYM> list = membershipGYMService.findAllMemberships();
+        List<MembershipGYM> list = membershipGYMService.findAllMembershipsOfGYM();
         LOG.info("add - OK");
         Assert.assertTrue(list.size() == 2);
     }
 
     @Test
     public void findByTypeOfGymMembership() {
-        MembershipGYM membershipGYM = membershipGYMService.findByTypeOfGymMembership("ULT1");
+        MembershipGYM membershipGYM = membershipGYMService.findByTypeOfMembershipGYM("ULT1");
         LOG.info("findByTypeOfGymMembership - OK");
-        Assert.assertTrue(membershipGYM.getTypeOfGymMembership().equals("ULT1"));
+        Assert.assertTrue(membershipGYM.getTypeOfMembershipGYM().equals("ULT1"));
     }
 
     @Test
     public void findAll() {
-        List<MembershipGYM> list = membershipGYMService.findAllMemberships();
+        List<MembershipGYM> list = membershipGYMService.findAllMembershipsOfGYM();
         LOG.info("findAll - OK");
         Assert.assertTrue(list.size() == 1);
     }
 
     @Test
     public void editMembershipGYM() {
-        MembershipGYM membershipGYM = membershipGYMService.findByTypeOfGymMembership("ULT1");
-        membershipGYM.setTypeOfGymMembership("ULT2");
+        MembershipGYM membershipGYM = membershipGYMService.findByTypeOfMembershipGYM("ULT1");
+        membershipGYM.setTypeOfMembershipGYM("ULT2");
         membershipGYM.setValidityMonths(2);
         membershipGYM.setNumber_of_workouts(32);
         MembershipGYM edited = membershipGYMService.editMembershipGYM(membershipGYM);
         LOG.info("editMembershipGYM - OK");
-        Assert.assertTrue(edited.getTypeOfGymMembership().equals("ULT2"));
+        Assert.assertTrue(edited.getTypeOfMembershipGYM().equals("ULT2"));
         Assert.assertTrue(edited.getValidityMonths() == 2);
         Assert.assertTrue(edited.getNumber_of_workouts() == 32);
     }

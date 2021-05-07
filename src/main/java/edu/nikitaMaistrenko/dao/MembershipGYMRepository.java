@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface MembershipGYMRepository extends JpaRepository<MembershipGYM, Long> {
 
-    @Query(value = "select t from MembershipGYM t where t.typeOfGymMembership = ?1")
-    MembershipGYM findByTypeOfGymMembership(String typeOfGymMembership);
+    @Query(value = "select t from MembershipGYM t where t.typeOfMembershipGYM = ?1")
+    MembershipGYM findByTypeOfMembershipGYM(String typeOfMembershipGYM);
 }
