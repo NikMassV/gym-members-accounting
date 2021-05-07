@@ -28,13 +28,17 @@ public class MemberService {
     }
 
     @Transactional
+    public Member findByLastNameAndFirstName(String lastName, String firstName) {
+        return memberRepository.findByLastNameAndFirstName(lastName, firstName);
+    }
+
+    @Transactional
     public List<Member> findAllMembers() {
         return memberRepository.findAll();
     }
 
-
     @Transactional
-    public Member editMembershipGYM(Member member) {
+    public Member editMember(Member member) {
         return memberRepository.saveAndFlush(member);
     }
 }

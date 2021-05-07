@@ -18,10 +18,23 @@ public class MemberController {
         this.memberService = memberService;
     }
 
+    @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String addMember(@RequestBody Member member) {
+        memberService.add(member);
+        return "Member added successfully";
+    }
+
     @GetMapping(path = "/findByLastName", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public List<Member> findByLastName(@RequestParam("lastName") String lastName) {
         return memberService.findByLastName(lastName);
+    }
+
+    @GetMapping(path = "/findByLastNameAndFirstName", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Member findByLastNameAndFirstName(@RequestParam("lastName") String lastName,
+                                             @RequestParam("firstName") String firstName) {
+        return memberService.findByLastNameAndFirstName(lastName, firstName);
     }
 
     @GetMapping(path = "/findAll", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -30,8 +43,9 @@ public class MemberController {
         return memberService.findAllMembers();
     }
 
-    @GetMapping(path = "/check", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String cA() {
-        return "Rest is working";
+    @PutMapping(path = "/editMember", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Member editMember(@RequestBody Member member) {
+        return memberService.editMember(member);
     }
 }
