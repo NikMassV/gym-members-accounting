@@ -15,7 +15,7 @@ CREATE TABLE member (
 
 CREATE TABLE membership_gym (
     membership_gym_id serial not null,
-    type_of_gym_membership varchar (30) not null,
+    type_of_membership_gym varchar (30) not null,
     number_of_workouts integer not null,
     validity_months integer not null,
     PRIMARY KEY (membership_gym_id)
@@ -41,7 +41,7 @@ VALUES ('Василий', 'Васильев', '12.02.1992', '+375(29)298-42-12',
 ('Петр', 'Васильев', '12.02.1992', '+375(29)298-42-12', 'мужской', 'instagram'),
 ('Надежда', 'Простанина', '12.02.1992', '+375(33)272-28-12', 'женский', 'vk');
 
-INSERT INTO membership_gym (type_of_gym_membership, number_of_workouts, validity_months)
+INSERT INTO membership_gym (type_of_membership_gym, number_of_workouts, validity_months)
 VALUES ('ULT1', 16, 1);
 
 INSERT INTO membership_card (member_id, membership_gym_id, marked_workouts, purchase_date, expired_date, membership_status)

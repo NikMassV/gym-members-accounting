@@ -1,5 +1,7 @@
 package edu.nikitaMaistrenko.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,8 +14,8 @@ public class MembershipGYM {
     @Column(name = "membership_gym_id")
     private Long gymMembershipId;
 
-    @Column(name = "type_of_gym_membership")
-    private String typeOfGymMembership;
+    @Column(name = "type_of_membership_gym")
+    private String typeOfMembershipGYM;
 
     @Column(name = "number_of_workouts")
     private Integer number_of_workouts;
@@ -21,6 +23,7 @@ public class MembershipGYM {
     @Column(name = "validity_months")
     private Integer validityMonths;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "membershipGYM")
     private List<MembershipCard> membershipCards;
 
@@ -32,12 +35,12 @@ public class MembershipGYM {
         this.gymMembershipId = gymMembershipId;
     }
 
-    public String getTypeOfGymMembership() {
-        return typeOfGymMembership;
+    public String getTypeOfMembershipGYM() {
+        return typeOfMembershipGYM;
     }
 
-    public void setTypeOfGymMembership(String typeOfGymMembership) {
-        this.typeOfGymMembership = typeOfGymMembership;
+    public void setTypeOfMembershipGYM(String typeOfMembershipGYM) {
+        this.typeOfMembershipGYM = typeOfMembershipGYM;
     }
 
     public Integer getNumber_of_workouts() {

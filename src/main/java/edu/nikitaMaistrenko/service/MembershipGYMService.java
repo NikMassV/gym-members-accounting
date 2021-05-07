@@ -23,12 +23,12 @@ public class MembershipGYMService {
     }
 
     @Transactional
-    public MembershipGYM findByTypeOfGymMembership(String typeOfGymMembership) {
-        return membershipGYMRepository.findByTypeOfGymMembership(typeOfGymMembership);
+    public MembershipGYM findByTypeOfMembershipGYM(String typeOfMembershipGYM) {
+        return membershipGYMRepository.findByTypeOfMembershipGYM(typeOfMembershipGYM);
     }
 
     @Transactional
-    public List<MembershipGYM> findAllMemberships() {
+    public List<MembershipGYM> findAllMembershipsOfGYM() {
         return membershipGYMRepository.findAll();
     }
 
