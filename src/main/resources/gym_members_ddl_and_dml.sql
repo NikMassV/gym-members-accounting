@@ -46,4 +46,4 @@ VALUES ('ULT1', 16, 1);
 
 INSERT INTO membership_card (member_id, membership_gym_id, marked_workouts, purchase_date, expired_date, membership_status)
 VALUES (1, 1, 1, '28.03.2021', '27.03.2021', 0),
-(2, 1, 1, '28.03.2021', '27.03.2021', 0);
+(3, 1, 2, '28.03.2021', '27.03.2021', 0);

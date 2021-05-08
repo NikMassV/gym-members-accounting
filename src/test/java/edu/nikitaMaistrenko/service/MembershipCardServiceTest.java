@@ -1,6 +1,7 @@
 package edu.nikitaMaistrenko.service;
 
 import edu.nikitaMaistrenko.domain.MembershipCard;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -27,8 +28,8 @@ public class MembershipCardServiceTest {
 
     @Test
     public void findAll() {
-        List<MembershipCard> list = membershipCardService.findAllMembershipCards();
+        /*List<MembershipCard> list = membershipCardService.findAllMembershipCards();
         list.forEach(mc -> System.out.println(mc.getMembershipCardId() + " : " + mc.getMember() + " : " + mc.getMembershipGYM()));
-        LOG.info("findAll - OK");
+        LOG.info("findAll - OK");*/
     }
 }

@@ -1,5 +1,10 @@
 package edu.nikitaMaistrenko.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import edu.nikitaMaistrenko.view.dateconverter.LocalDateStringConverter;
+import edu.nikitaMaistrenko.view.dateconverter.StringLocalDateConverter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -13,20 +18,24 @@ public class MembershipCard {
     @Column(name = "membership_card_id")
     private Long membershipCardId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "membership_gym_id")
     private MembershipGYM membershipGYM;
 
     @Column(name = "marked_workouts")
     private Integer markedWorkouts;
 
+    @JsonSerialize(converter = LocalDateStringConverter.class)
+    @JsonDeserialize(converter = StringLocalDateConverter.class)
     @Column(name = "purchase_date")
     private LocalDate purchaseDate;
 
+    @JsonSerialize(converter = LocalDateStringConverter.class)
+    @JsonDeserialize(converter = StringLocalDateConverter.class)
     @Column(name = "expired_date")
     private LocalDate expiredDate;
 
