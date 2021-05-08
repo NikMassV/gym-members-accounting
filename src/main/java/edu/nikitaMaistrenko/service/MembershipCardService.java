@@ -3,6 +3,7 @@ package edu.nikitaMaistrenko.service;
 import edu.nikitaMaistrenko.dao.MembershipCardRepository;
 import edu.nikitaMaistrenko.domain.Member;
 import edu.nikitaMaistrenko.domain.MembershipCard;
+import edu.nikitaMaistrenko.view.MembershipCardResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,7 +30,7 @@ public class MembershipCardService {
     }
 
     @Transactional
-    public List<MembershipCard> findAllMembershipCards() {
+    public List<MembershipCardResponse> findAllMembershipCards() {
         return membershipCardRepository.findAllMembershipCards();
     }
 }
