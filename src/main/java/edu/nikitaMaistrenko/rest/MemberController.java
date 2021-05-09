@@ -21,7 +21,7 @@ public class MemberController {
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String addMember(@RequestBody Member member) {
         memberService.add(member);
-        return "Member added successfully";
+        return "Member added successfully!";
     }
 
     @GetMapping(path = "/findByLastName", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -43,7 +43,7 @@ public class MemberController {
         return memberService.findAllMembers();
     }
 
-    @PutMapping(path = "/editMember", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "/edit", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Member editMember(@RequestBody Member member) {
         return memberService.editMember(member);

@@ -10,8 +10,8 @@ import java.time.LocalDate;
 
 public class MembershipCardResponse {
 
-    private String memberLastName;
-    private String memberFirstName;
+    private String lastName;
+    private String firstName;
     private String typeOfMembershipId;
     private Integer markedWorkouts;
     @JsonSerialize(converter = LocalDateStringConverter.class)
@@ -24,29 +24,29 @@ public class MembershipCardResponse {
     public MembershipCardResponse() {
     }
 
-    public MembershipCardResponse(String memberLastName, String memberFirstName, String typeOfMembershipId, Integer markedWorkouts, LocalDate expiredDate, LocalDate purposeDate) {
-        this.memberLastName = memberLastName;
-        this.memberFirstName = memberFirstName;
+    public MembershipCardResponse(String lastName, String firstName, String typeOfMembershipId, Integer markedWorkouts, LocalDate expiredDate, LocalDate purposeDate) {
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.typeOfMembershipId = typeOfMembershipId;
         this.markedWorkouts = markedWorkouts;
         this.expiredDate = expiredDate;
         this.purposeDate = purposeDate;
     }
 
-    public String getMemberLastName() {
-        return memberLastName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setMemberLastName(String memberLastName) {
-        this.memberLastName = memberLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getMemberFirstName() {
-        return memberFirstName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setMemberFirstName(String memberFirstName) {
-        this.memberFirstName = memberFirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getTypeOfMembershipId() {

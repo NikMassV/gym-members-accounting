@@ -18,9 +18,25 @@ public class MembershipCardController {
         this.membershipCardService = membershipCardService;
     }
 
-    @GetMapping(path = "/findAllMembershipCards", produces = MediaType.APPLICATION_JSON_VALUE)
+
+
+    @GetMapping(path = "/findAll", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<MembershipCardResponse> findAllMembershipCards(){
+
+    public List<MembershipCardResponse> findAllMembershipCards() {
         return membershipCardService.findAllMembershipCards();
+    }
+
+    @GetMapping(path = "/findByLastName", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<MembershipCardResponse> findByLastName(@RequestParam("lastName") String lastName) {
+        return membershipCardService.findByLastName(lastName);
+    }
+
+    @GetMapping(path = "/findByLastNameAndFirstName", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<MembershipCardResponse> findByLastNameAndFirstName(@RequestParam("lastName") String lastName,
+                                                                   @RequestParam("firstName") String firstName) {
+        return membershipCardService.findByLastNameAndFirstName(lastName, firstName);
     }
 }

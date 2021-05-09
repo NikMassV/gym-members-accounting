@@ -18,7 +18,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations = {"classpath:springContext.xml"})
-@SqlGroup({@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:gym_members_ddl_and_dml.sql")})
+@SqlGroup({@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:gym_members_migration.sql")})
 public class MembershipGYMServiceTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(MembershipGYMServiceTest.class);
