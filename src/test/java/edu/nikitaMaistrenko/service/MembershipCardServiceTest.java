@@ -1,7 +1,5 @@
 package edu.nikitaMaistrenko.service;
 
-import edu.nikitaMaistrenko.domain.MembershipCard;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -12,12 +10,10 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
-
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations = {"classpath:springContext.xml"})
-@SqlGroup({@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:gym_members_ddl_and_dml.sql")})
+@SqlGroup({@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:gym_members_migration.sql")})
 public class MembershipCardServiceTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(MembershipGYMServiceTest.class);

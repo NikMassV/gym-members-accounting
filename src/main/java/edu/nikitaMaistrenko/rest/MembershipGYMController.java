@@ -1,7 +1,5 @@
 package edu.nikitaMaistrenko.rest;
 
-import edu.nikitaMaistrenko.domain.Member;
-import edu.nikitaMaistrenko.domain.MembershipCard;
 import edu.nikitaMaistrenko.domain.MembershipGYM;
 import edu.nikitaMaistrenko.service.MembershipGYMService;
 import org.springframework.http.MediaType;
@@ -22,24 +20,24 @@ public class MembershipGYMController {
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String addMembershipGYM(@RequestBody MembershipGYM membershipGYM) {
         membershipGYMService.add(membershipGYM);
-        return "MembershipGYM added successfully";
+        return "MembershipGYM added successfully!";
     }
 
-    @GetMapping(path = "/findByTypeOfMembershipGYM", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/findByType", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public MembershipGYM findByTypeOfMembershipGYM(@RequestParam ("typeOfMembershipGYM") String typeOfMembershipGYM){
+    public MembershipGYM findByTypeOfMembershipGYM(@RequestParam("typeOfMembershipGYM") String typeOfMembershipGYM) {
         return membershipGYMService.findByTypeOfMembershipGYM(typeOfMembershipGYM);
     }
 
-    @GetMapping(path = "/findAllMembershipsOfGYM", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/findAll", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<MembershipGYM> findAllMembershipsOfGYM(){
+    public List<MembershipGYM> findAllMembershipsOfGYM() {
         return membershipGYMService.findAllMembershipsOfGYM();
     }
 
-    @PutMapping(path = "/editMembershipGYM", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "/edit", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public MembershipGYM editMembershipGYM(@RequestBody MembershipGYM membershipGYM){
+    public MembershipGYM editMembershipGYM(@RequestBody MembershipGYM membershipGYM) {
         return membershipGYMService.editMembershipGYM(membershipGYM);
     }
 }

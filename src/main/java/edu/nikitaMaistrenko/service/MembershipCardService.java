@@ -1,7 +1,6 @@
 package edu.nikitaMaistrenko.service;
 
 import edu.nikitaMaistrenko.dao.MembershipCardRepository;
-import edu.nikitaMaistrenko.domain.Member;
 import edu.nikitaMaistrenko.domain.MembershipCard;
 import edu.nikitaMaistrenko.view.MembershipCardResponse;
 import org.springframework.stereotype.Service;
@@ -25,8 +24,13 @@ public class MembershipCardService {
     }
 
     @Transactional
-    public List<MembershipCard> findByLastName(Member member) {
-        return membershipCardRepository.findByMemberLastName(member.getLastName());
+    public List<MembershipCardResponse> findByLastName(String lastName) {
+        return membershipCardRepository.findByLastName(lastName);
+    }
+
+    @Transactional
+    public List<MembershipCardResponse> findByLastNameAndFirstName(String lastName, String firstName) {
+        return membershipCardRepository.findByLastNameAndFirstName(lastName, firstName);
     }
 
     @Transactional

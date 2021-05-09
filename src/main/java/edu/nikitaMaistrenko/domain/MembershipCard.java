@@ -7,7 +7,6 @@ import edu.nikitaMaistrenko.view.dateconverter.StringLocalDateConverter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Table(name = "membership_card")
 @Entity
@@ -18,11 +17,11 @@ public class MembershipCard {
     @Column(name = "membership_card_id")
     private Long membershipCardId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "membership_gym_id")
     private MembershipGYM membershipGYM;
 
