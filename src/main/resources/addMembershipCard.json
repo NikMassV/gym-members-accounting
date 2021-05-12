@@ -1,0 +1,22 @@
+{
+  "membershipCardId": 1,
+  "member": {
+    "memberId": 1,
+    "firstName": "Василий",
+    "lastName": "Васильев",
+    "dateOfBirth": "12.02.1992",
+    "telNumber": "+375(29)298-42-12",
+    "sex": "мужской",
+    "sourceOfAdvertising": "instagram"
+  },
+  "membershipGYM": {
+    "gymMembershipId": 1,
+    "typeOfMembershipGYM": "ULT1",
+    "number_of_workouts": 16,
+    "validityMonths": 1
+  },
+  "markedWorkouts": 1,
+  "purchaseDate": "28.03.2021",
+  "expiredDate": "27.03.2021",
+  "membershipStatus": "АКТИВНЫЙ"
+}
