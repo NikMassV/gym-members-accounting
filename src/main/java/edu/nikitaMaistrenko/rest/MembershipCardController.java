@@ -18,11 +18,14 @@ public class MembershipCardController {
         this.membershipCardService = membershipCardService;
     }
 
-
+    @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String add(@RequestBody MembershipCard membershipCard) {
+        membershipCardService.add(membershipCard);
+        return "Membership card added successfully!";
+    }
 
     @GetMapping(path = "/findAll", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-
     public List<MembershipCardResponse> findAllMembershipCards() {
         return membershipCardService.findAllMembershipCards();
     }
@@ -38,5 +41,11 @@ public class MembershipCardController {
     public List<MembershipCardResponse> findByLastNameAndFirstName(@RequestParam("lastName") String lastName,
                                                                    @RequestParam("firstName") String firstName) {
         return membershipCardService.findByLastNameAndFirstName(lastName, firstName);
+    }
+
+    @GetMapping(path = "/findAllFullData", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<MembershipCard> findAllFullData() {
+        return membershipCardService.findAllFullData();
     }
 }

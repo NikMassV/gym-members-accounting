@@ -37,4 +37,9 @@ public class MembershipCardService {
     public List<MembershipCardResponse> findAllMembershipCards() {
         return membershipCardRepository.findAllMembershipCards();
     }
+
+    @Transactional
+    public List<MembershipCard> findAllFullData(){
+        return membershipCardRepository.findAllFullData();
+    }
 }
