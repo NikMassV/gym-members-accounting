@@ -12,7 +12,7 @@ public class MembershipGYM {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "membership_gym_id")
-    private Long gymMembershipId;
+    private Long membershipGYMId;
 
     @Column(name = "type_of_membership_gym")
     private String typeOfMembershipGYM;
@@ -27,12 +27,12 @@ public class MembershipGYM {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "membershipGYM")
     private List<MembershipCard> membershipCards;
 
-    public Long getGymMembershipId() {
-        return gymMembershipId;
+    public Long getMembershipGYMId() {
+        return membershipGYMId;
     }
 
-    public void setGymMembershipId(Long gymMembershipId) {
-        this.gymMembershipId = gymMembershipId;
+    public void setMembershipGYMId(Long membershipGYMId) {
+        this.membershipGYMId = membershipGYMId;
     }
 
     public String getTypeOfMembershipGYM() {

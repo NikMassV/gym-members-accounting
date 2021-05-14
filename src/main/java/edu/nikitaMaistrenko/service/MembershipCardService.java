@@ -39,7 +39,7 @@ public class MembershipCardService {
     }
 
     @Transactional
-    public List<MembershipCard> findAllFullData(){
+    public List<MembershipCard> findAllFullData() {
         return membershipCardRepository.findAllFullData();
     }
 }
