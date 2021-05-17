@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -33,16 +34,12 @@ public class MembershipCardController {
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String add(@RequestBody MembershipCardRequest membershipCardRequest) {
         MembershipGYM membershipGYM = membershipGYMService.findByTypeOfMembershipGYM(membershipCardRequest.getTypeOfMembershipGYM());
-        try {
-            if (membershipGYM == null) return "This membership of GYM doesn`t exist";
-        } catch (NullPointerException ex) {
-        }
+        if (membershipGYM == null) return "This membership of GYM doesn`t exist";
+
         Member member = memberService.findByLastNameAndFirstName(membershipCardRequest.getLastName(),
                 membershipCardRequest.getFirstName());
-        try {
-            if (member == null) return "This member doesn`t exist";
-        } catch (NullPointerException ex) {
-        }
+        if (member == null) return "This member doesn`t exist";
+
 
         MembershipCard membershipCard = new MembershipCard();
         membershipCard.setMember(member);
